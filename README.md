@@ -6,3 +6,6 @@ https://github.com/ChristianLloydSalon/Worse-Morse/blob/main/Worse_Morse/src/mai
 
 Decoder File: 
 https://github.com/ChristianLloydSalon/Worse-Morse/blob/main/Worse_Morse/src/main/kotlin/decoder/MorseCodeDecoder.kt
+
+
+![Algorithm](https://github.com/ChristianLloydSalon/Worse-Morse/blob/main/Algorithm.png)
