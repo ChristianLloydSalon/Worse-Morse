@@ -1,4 +1,4 @@
-# Worse-Morse
+# Worse Morse
 Machine Exercise 1 in Programming Problems
 
 Main File: 
