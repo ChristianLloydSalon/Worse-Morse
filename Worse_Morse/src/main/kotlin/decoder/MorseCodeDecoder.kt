@@ -69,24 +69,31 @@ class MorseCodeDecoder {
 
     // a function that finds all possible ways to decode the morse code
     private fun findWays(pointer: Int, list: List<Int>, code: String) {
-        if(pointer + 1 > list.count() - 1)
-            return
+        // return if pointer + 1 > number of elements in the list
+        if (pointer + 1 > list.count() - 1) return
 
+        // return if there are elements greater than 4 in the list
+        if (list.any{ element -> element > 4 }) return
+
+        // create a new list
         val newList = mutableListOf<Int>()
 
+        // decoded text
         var decoded:String? = String()
 
         var i = 0
         var j = 0
         while (i < list.size) {
             val num: Int = (if (i != pointer) (list[i]) else (list[i] + list[i + 1]))
+
             newList.add(num)
 
-            // get substring from j to j + num
+            // gets a substring that starts at j to j + num
             val str = code.substring(startIndex = j, endIndex = j + num)
 
             // check if substring is a valid morse code
             if (morseCode.containsKey(str))
+                // append the morse code to decoded
                 decoded += morseCode[str]
             else {
                 decoded = null
@@ -104,10 +111,6 @@ class MorseCodeDecoder {
         }
 
         findWays(pointer = pointer, list = newList, code = code)
-
-        // checks if the list contains elements greater than 4
-        if (newList.any{ element -> element > 4 }) findWays(pointer = (pointer + 1), list = newList, code = code)
-
         findWays(pointer = (pointer + 1), list = list, code = code)
     }
 }
